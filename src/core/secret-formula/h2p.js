@@ -1757,7 +1757,7 @@ Independently of the milestone type, milestones also have an icon indicating wha
       info: () => `
 When you purchase the last Imaginary Upgrade and unlock Pelle, you unlock their tab, where you can find a button to
 "Doom your Reality". In order to Doom your Reality, you must have completed all ${formatInt(17)} rows of Achievements
-available to you at this point, and attained ${formatInt(25000)} of each Alchemy Resource.
+available to you at this point, and attained ${formatInt(Ra.alchemyResourceCap)} of each Alchemy Resource.
 <br>
 <br>
 ${Pelle.isDoomed

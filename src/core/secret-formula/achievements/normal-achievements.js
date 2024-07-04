@@ -1285,9 +1285,9 @@ export const normalAchievements = [
   },
   {
     id: 175,
-    name: "The First Antihistorian",
-    get description() { return `Get ${formatInt(Ra.alchemyResourceCap)} of all Alchemy Resources.`; },
-    checkRequirement: () => AlchemyResources.all.every(x => x.amount >= Ra.alchemyResourceCap),
+    name: "The First Antihistorian", //  may want to change Ra.alchemyResourceCap  but achivment shouldnt
+    get description() { return `Get ${formatInt(25000)} of all Alchemy Resources.`; },
+    checkRequirement: () => AlchemyResources.all.every(x => x.amount >= 25000),
     checkEvent: GAME_EVENT.REALITY_RESET_AFTER,
     get reward() {
       return `Synergism can go above ${formatPercents(1)} and Momentum increases ${formatX(10)} faster.`;
