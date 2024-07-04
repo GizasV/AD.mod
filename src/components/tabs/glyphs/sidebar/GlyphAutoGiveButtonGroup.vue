@@ -21,7 +21,7 @@ export default {
         update() {
             this.vIsFlipped = V.isFlipped;
             this.realityGlyphUnlocked = AlchemyResource.reality.isUnlocked;
-            this.availableGlyphs = (this.vIsFlipped || this.realityGlyphUnlocked);
+            this.availableGlyphs = ((this.vIsFlipped || this.realityGlyphUnlocked) && PlayerProgress.existenceUnlocked()); // need existence, may change to an existence milestone
             this.cursedOn = player.reality.autoCursedGlyph;
             this.realityOn = player.reality.autoRealityGlyph;
         },
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-    <div class="o-glyph-inventory-management-group">
+    <div class="o-glyph-inventory-management-group" v-if="availableGlyphs">
         <div class="l-glyph-sacrifice-options__header" v-if="availableGlyphs">
             <div class="o-questionmark" v-tooltip="questionMarkTooltip">
                 ?
