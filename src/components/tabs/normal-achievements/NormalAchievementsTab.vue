@@ -120,7 +120,7 @@ export default {
       return this.renderedRowIndices.includes(row);
     },
     isObscured(row) {
-      return this.isDoomed ? false : row === 17;
+      return PlayerProgress.existenceUnlocked() ? false : (this.isDoomed ? row > 17 : row > 16);
     },
     timeDisplay,
     timeDisplayNoDecimals,

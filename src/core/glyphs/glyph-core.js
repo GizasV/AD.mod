@@ -804,8 +804,8 @@ export const Glyphs = {
       return;
     }
     const cursedCount = this.allGlyphs.filter(g => g !== null && g.type === "cursed").length;
-    if (cursedCount >= this.activeSlotCount) {
-      GameUI.notify.error(`You don't need more than ${format(this.activeSlotCount)} Cursed Glyphs!`);
+    if (cursedCount >= (this.activeSlotCount + Achievement(192).effectOrDefault(0))) {
+      GameUI.notify.error(`You don't need more than ${format(this.activeSlotCount + Achievement(192).effectOrDefault(0))} Cursed Glyphs!`);
     } else {
       this.addToInventory(GlyphGenerator.cursedGlyph());
       GameUI.notify.error("Created a Cursed Glyph");
@@ -827,9 +827,9 @@ export const Glyphs = {
   },
   autoGiveCursedGlyph() {// a copy of giveCursedGlyph without the notifi and on a loop
     let cursedCount = this.allGlyphs.countWhere(g => g !== null && g.type === "cursed");
-    for (let i = 0; i < this.activeSlotCount; i++) {
+    for (let i = 0; i < (this.activeSlotCount + Achievement(192).effectOrDefault(0)) ; i++) {
       cursedCount = this.allGlyphs.countWhere(g => g !== null && g.type === "cursed");
-      if ((cursedCount < this.activeSlotCount) && (GameCache.glyphInventorySpace.value > 0)) {
+      if ((cursedCount < (this.activeSlotCount + Achievement(192).effectOrDefault(0))) && (GameCache.glyphInventorySpace.value > 0)) {
         this.addToInventory(GlyphGenerator.cursedGlyph());
       }else return;
     }

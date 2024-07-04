@@ -1383,4 +1383,62 @@ export const normalAchievements = [
     checkRequirement: () => GameEnd.endState > END_STATE_MARKERS.GAME_END && !GameEnd.removeAdditionalEnd,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
+  {
+    id: 191,
+    name: "...and a New Begining",
+    description: "Start a new Existence (nyi)",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+  {
+    id: 192,
+    name: "Ok, you can have one more",
+    get description() { return `Sacrifice a Cursed Glyph while having ${formatInt(Glyphs.activeSlotCount - 1)} equiped `; },
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() { return `You can have ${formatInt(1)} more Cursed Glyph in your inventory`; },
+    effect: 1,
+  },
+  {
+    id: 193,
+    name: "nyi",
+    description: "nyi",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+  {
+    id: 194,
+    name: "nyi",
+    description: "nyi",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+  {
+    id: 195,
+    name: "nyi",
+    description: "nyi",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+  {
+    id: 196,
+    name: "nyi",
+    description: "nyi",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+  {
+    id: 197,
+    name: "nyi",
+    description: "nyi",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+  {
+    id: 198,
+    name: "nyi",
+    description: "nyi",
+    checkRequirement: () => false,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+  },
+
 ];

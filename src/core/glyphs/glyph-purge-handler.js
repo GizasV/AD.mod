@@ -57,6 +57,9 @@ export const GlyphSacrificeHandler = {
       Modal.glyphSacrifice.show({ idx: glyph.idx, gain: toGain });
       return;
     }
+    if(glyph.type === "cursed" && (Glyphs.active.countWhere(g => g !== null && g.type === "cursed")) === (Glyphs.activeSlotCount - 1)) {
+      Achievement(192).unlock()
+    }
     player.reality.glyphs.sac[glyph.type] += toGain;
     GameCache.logTotalGlyphSacrifice.invalidate();
     Glyphs.removeFromInventory(glyph);
