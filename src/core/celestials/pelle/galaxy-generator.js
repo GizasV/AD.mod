@@ -32,7 +32,7 @@ export const GalaxyGenerator = {
       GalaxyGeneratorUpgrades.antimatterMult,
       GalaxyGeneratorUpgrades.IPMult,
       GalaxyGeneratorUpgrades.EPMult,
-    ).toNumber();
+    ).toNumber() * (PlayerProgress.existenceUnlocked() ? 10 : 1); // To replace with ExistenceUpgrade 
   },
 
   get capObj() {
@@ -64,8 +64,9 @@ export const GalaxyGenerator = {
     if (this.isCapped) {
       Pelle.quotes.galaxyGeneratorRifts.show();
     }
+    // rift drain speed
     if (this.sacrificeActive) {
-      this.capRift.reducedTo = Math.max(this.capRift.reducedTo - 0.03 * diff / 1000, 0);
+      this.capRift.reducedTo = Math.max(this.capRift.reducedTo - (0.03 * diff / 1000) * (PlayerProgress.existenceUnlocked() ? 10 : 1), 0);
       if (this.capRift.reducedTo === 0) {
         player.celestials.pelle.galaxyGenerator.sacrificeActive = false;
         player.celestials.pelle.galaxyGenerator.phase++;
@@ -99,7 +100,7 @@ export const GalaxyGenerator = {
     );
 
     if (!this.capRift) {
-      PelleRifts.all.forEach(r => r.reducedTo = Math.min(r.reducedTo + 0.03 * diff / 1000, 2));
+      PelleRifts.all.forEach(r => r.reducedTo = Math.min(r.reducedTo + (0.03 * diff / 1000) * (PlayerProgress.existenceUnlocked() ? 10 : 1), 2));
       if (PelleRifts.vacuum.milestones[0].canBeApplied && !this.hasReturnedGlyphSlot) {
         Glyphs.refreshActive();
         EventHub.dispatch(GAME_EVENT.GLYPHS_EQUIPPED_CHANGED);

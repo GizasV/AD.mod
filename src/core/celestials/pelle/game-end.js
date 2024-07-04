@@ -45,7 +45,10 @@ export const GameEnd = {
     if (!this.removeAdditionalEnd && this.endState >= END_STATE_MARKERS.GAME_END &&
         ui.$viewModel.modal.progressBar === undefined) {
       player.isGameEnd = true;
-      this.additionalEnd += Math.min(diff / 1000 / 20, 0.1);
+      if (!player.options.animations.existence && this.endState < END_STATE_MARKERS.SHOW_NEW_GAME) this.additionalEnd = END_STATE_MARKERS.SHOW_NEW_GAME//animation option
+      if (this.endState >= END_STATE_MARKERS.CREDITS_START && this.endState < END_STATE_MARKERS.SHOW_NEW_GAME && PlayerProgress.existenceUnlocked())
+        this.additionalEnd = END_STATE_MARKERS.SHOW_NEW_GAME // skip credit space
+      this.additionalEnd += Math.min(diff / 1000 / (PlayerProgress.existenceUnlocked() ? 2 : 20), 0.1); // end scroll speed 
     }
   }
 };

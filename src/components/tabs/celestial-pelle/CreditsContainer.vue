@@ -47,7 +47,7 @@ export default {
       if (GameEnd.creditsEverClosed) return;
       if (!oldVal && newVal && this.audio === null) {
         this.audio = new Audio(`audio/credits.mp3`);
-        this.audio.play();
+        if(!PlayerProgress.existenceUnlocked()) this.audio.play();
       }
     }
   },

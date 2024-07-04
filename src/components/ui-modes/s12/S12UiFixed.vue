@@ -25,7 +25,8 @@ export default {
   },
   data() {
     return {
-      ending: false
+      ending: false,
+      credits: false // to hide the credits after first time
     };
   },
   computed: {
@@ -36,6 +37,7 @@ export default {
   methods: {
     update() {
       this.ending = GameEnd.endState >= END_STATE_MARKERS.FADE_AWAY && !GameEnd.creditsClosed;
+      this.credits = (this.ending && (!PlayerProgress.existenceUnlocked()));
     }
   }
 };
@@ -59,7 +61,7 @@ export default {
         :modal="view.modal.current"
       />
       <FadeAway v-if="ending" />
-      <CreditsContainer v-if="ending" />
+      <CreditsContainer v-if="credits" />
       <NewGame v-if="ending" />
       <SpectateGame />
     </div>

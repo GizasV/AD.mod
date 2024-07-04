@@ -767,6 +767,10 @@ window.player = {
   triggeredTabNotificationBits: 0,
   tutorialState: 0,
   tutorialActive: true,
+  //existence things
+  existences: 0,
+
+
   options: {
     news: {
       enabled: true,
@@ -842,6 +846,7 @@ window.player = {
       dilation: true,
       tachyonParticles: true,
       reality: true,
+      existence: true,
       background: true,
       blobSnowflakes: 16,
       blobHole: false

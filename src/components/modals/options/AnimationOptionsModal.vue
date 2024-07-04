@@ -17,12 +17,14 @@ export default {
       dilationUnlocked: false,
       tachyonsUnlocked: false,
       realityUnlocked: false,
+      existenceUnlocked: false,
       animatedThemeUnlocked: false,
       bigCrunch: false,
       eternity: false,
       dilation: false,
       tachyonParticles: false,
       reality: false,
+      existence: false,
       background: false,
       blobSnowflakes: 16,
       isS11Active: false,
@@ -61,6 +63,9 @@ export default {
     reality(newValue) {
       player.options.animations.reality = newValue;
     },
+    existence(newValue) {
+      player.options.animations.existence = newValue;
+    },
     background(newValue) {
       player.options.animations.background = newValue;
     },
@@ -77,6 +82,7 @@ export default {
       this.infinityUnlocked = this.fullCompletion || progress.isInfinityUnlocked;
       this.eternityUnlocked = this.fullCompletion || progress.isEternityUnlocked;
       this.realityUnlocked = this.fullCompletion || progress.isRealityUnlocked;
+      this.existenceUnlocked = this.fullCompletion || progress.isExistenceUnlocked;
       // 136 is given upon dilating
       this.dilationUnlocked = this.realityUnlocked || Achievement(136).canBeApplied;
       this.tachyonsUnlocked = this.realityUnlocked || Currency.tachyonParticles.gt(0);
@@ -91,6 +97,7 @@ export default {
       this.dilation = options.dilation;
       this.tachyonParticles = options.tachyonParticles;
       this.reality = options.reality;
+      this.existence = options.existence;
       this.background = options.background;
       this.blobSnowflakes = options.blobSnowflakes;
       this.blobHole = options.blobHole;
@@ -133,6 +140,11 @@ export default {
         v-if="realityUnlocked"
         v-model="reality"
         text="Reality:"
+      />
+      <ModalOptionsToggleButton
+        v-if="existenceUnlocked"
+        v-model="existence"
+        text="Existence:"
       />
       <ModalOptionsToggleButton
         v-if="isS11Unlocked && isBlackHoleUnlocked"
