@@ -192,4 +192,44 @@ export const secretAchievements = [
     name: "Stack overflow",
     description: "Have more Automator errors than lines."
   },
+  {
+    id: 51,
+    name: "Here we go again",
+    description: "Empty all of your Alchemy Resources."
+  },
+  {
+    id: 52,
+    name: "nyi",
+    description: "nyi"
+  },
+  {
+    id: 53,
+    name: "nyi",
+    description: "nyi"
+  },
+  {
+    id: 54,
+    name: "nyi",
+    description: "nyi"
+  },
+  {
+    id: 55,
+    name: "nyi",
+    description: "nyi"
+  },
+  {
+    id: 56,
+    name: "nyi",
+    description: "nyi"
+  },
+  {
+    id: 57,
+    name: "nyi",
+    description: "nyi"
+  },
+  {
+    id: 58,
+    name: "nyi",
+    description: "nyi"
+  },
 ];

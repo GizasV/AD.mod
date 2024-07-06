@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     isDoomed: () => Pelle.isDoomed,
-    rows: () => Achievements.allRows,
+    rows: () => ( (PlayerProgress.existenceUnlocked()) ? Achievements.allRows : Achievements.allRows.slice(0,18) ) ,
     renderedRows() {
       return this.rows.filter((_, i) => this.renderedRowIndices.includes(i));
     },
@@ -120,7 +120,7 @@ export default {
       return this.renderedRowIndices.includes(row);
     },
     isObscured(row) {
-      return PlayerProgress.existenceUnlocked() ? false : (this.isDoomed ? row > 17 : row > 16);
+      return  (this.isDoomed || PlayerProgress.existenceUnlocked() ? false : row > 16);
     },
     timeDisplay,
     timeDisplayNoDecimals,

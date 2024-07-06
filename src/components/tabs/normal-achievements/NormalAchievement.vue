@@ -30,6 +30,7 @@ export default {
       realityUnlocked: false,
       garbleTimer: 0,
       garbleKey: 0,
+      isGarbled: false,
       achievementTime: 0,
     };
   },
@@ -116,6 +117,7 @@ export default {
       this.isCancer = Theme.current().name === "S4" || player.secretUnlocks.cancerAchievements;
       this.showUnlockState = player.options.showHintText.achievementUnlockStates;
       this.realityUnlocked = PlayerProgress.realityUnlocked();
+      this.isGarbled = this.isObscured || [147,151,168,188].includes(this.achievement.id)
 
       this.processedName = this.processText(this.config.name, this.garbledNameTemplate);
       this.processedId = this.processText(this.displayId, this.garbledIDTemplate);
@@ -124,8 +126,8 @@ export default {
       // This uses key-swapping to force the garbled achievements to re-render their text, because otherwise they
       // would remain static. Keys for non-garbled achievements won't change, and all keys remain unique.
       this.garbleTimer++;
-      if (this.isObscured) {
-        this.garbleKey = 10 * this.id + Math.floor(this.garbleTimer / 3);
+      if (this.isGarbled) {
+        this.garbleKey = 10 * this.id + Math.floor(this.garbleTimer / 1.5);
       } else {
         this.garbleKey = this.id;
       }

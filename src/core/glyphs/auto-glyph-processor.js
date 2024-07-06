@@ -140,7 +140,7 @@ export const AutoGlyphProcessor = {
   },
   getRidOfGlyph(glyph) {
     // Auto clean calls this function too, which chokes without a special case for these types
-    if (glyph.type === "cursed" || glyph.type === "companion") {
+    if (glyph.type === "companion") {
       GlyphSacrificeHandler.deleteGlyph(glyph, true);
       return;
     }

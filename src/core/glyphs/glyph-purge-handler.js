@@ -171,6 +171,7 @@ export const GlyphSacrificeHandler = {
           AlchemyResource.all[i].amount = 0;
         }
         Glyphs.removeFromInventory(glyph);
+        SecretAchievement(51).unlock();
         return;
       }
 

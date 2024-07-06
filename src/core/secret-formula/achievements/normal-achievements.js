@@ -1,4 +1,5 @@
 import { DC } from "../../constants";
+import wordShift from "@/core/word-shift";
 
 export const normalAchievements = [
   {
@@ -1092,7 +1093,9 @@ export const normalAchievements = [
     description: "Have all Reality upgrades bought.",
     checkRequirement: () => RealityUpgrades.allBought,
     checkEvent: GAME_EVENT.REALITY_UPGRADE_BOUGHT,
-    reward: "Unlock Teresa, the Celestial of Reality."
+    get reward() {return ((PlayerProgress.existenceUnlocked()) ? 
+      `Unlock the ${wordShift.wordCycle(["Sycophant","Deity","Monarch"])}` : `Unlock Teresa, the Celestial of Reality.` ); }
+    
   },
   {
     id: 148,
@@ -1114,7 +1117,8 @@ export const normalAchievements = [
     },
     checkRequirement: () => player.galaxies >= 800 && player.requirementChecks.infinity.noAD8,
     checkEvent: GAME_EVENT.GALAXY_RESET_AFTER,
-    reward: "Unlock V, the Celestial of Achievements."
+    get reward() {return ((PlayerProgress.existenceUnlocked()) ? 
+      `Unlock the ${wordShift.wordCycle(["Pride","Deity","Monarch"])}` : `Unlock V, the Celestial of Achievements.` ); }
   },
   {
     id: 152,
@@ -1242,7 +1246,9 @@ export const normalAchievements = [
   {
     id: 168,
     name: "Woah, we're halfway there",
-    get description() { return `Get ${formatInt(50)} total Ra Celestial Memory levels.`; },
+    get description() { return ((PlayerProgress.existenceUnlocked()) ? 
+      `Get ${formatInt(50)} total ${wordShift.wordCycle(["Forgotten","Deity","Monarch"])} Memory levels.` : 
+      `Get ${formatInt(50)} total Ra Celestial Memory levels.` ); },
     checkRequirement: () => Ra.totalPetLevel >= 50,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() { return `Get ${formatPercents(0.1)} more memories.`; },
@@ -1251,8 +1257,9 @@ export const normalAchievements = [
   {
     id: 171,
     name: "The god is delighted",
-    description: "Sacrifice every sacrificable Glyph type at least once.",
-    checkRequirement: () => Object.values(player.reality.glyphs.sac).every(s => s > 0),
+    get description() { return "Sacrifice every sacrificable Glyph type " + 
+      ( (PlayerProgress.existenceUnlocked()) ? "(exept Cursed) " : "" ) +  "at least once."; },
+    checkRequirement: () => Object.entries(player.reality.glyphs.sac).filter(x => x[0] !== "cursed").every(s => s[1] > 0),
     checkEvent: GAME_EVENT.GLYPHS_CHANGED,
     get reward() { return `Glyph sacrifice is ${formatX(2)} stronger.`; },
     effect: 2,
@@ -1378,14 +1385,14 @@ export const normalAchievements = [
   },
   {
     id: 188,
-    name: "The End",
-    description: "Beat the game.",
+    get name() {return ( (PlayerProgress.existenceUnlocked()) ? `The End ...` : `The End` );} ,
+    get description() { return ( (PlayerProgress.existenceUnlocked()) ? `Defeat the ${wordShift.wordCycle(["Eternal","Deity","Monarch"])}` : `Beat the game.` ); },
     checkRequirement: () => GameEnd.endState > END_STATE_MARKERS.GAME_END && !GameEnd.removeAdditionalEnd,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 191,
-    name: "...and a New Begining",
+    name: "... and a New Begining",
     description: "Start a new Existence (nyi)",
     checkRequirement: () => false,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
