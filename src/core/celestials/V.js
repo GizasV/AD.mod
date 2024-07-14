@@ -201,7 +201,7 @@ export const V = {
     player.celestials.v = {
       unlockBits: 0,
       run: false,
-      quotes: [],
+      quoteBits: 0,
       runUnlocks: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       goalReductionSteps: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       STSpent: 0,

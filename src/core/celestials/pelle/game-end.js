@@ -42,8 +42,7 @@ export const GameEnd = {
         this.removeAdditionalEnd = false;
       }
     }
-    if (!this.removeAdditionalEnd && this.endState >= END_STATE_MARKERS.GAME_END &&
-        ui.$viewModel.modal.progressBar === undefined) {
+    if (!this.removeAdditionalEnd && this.endState >= END_STATE_MARKERS.GAME_END && ui.$viewModel.modal.progressBar === undefined) {
       player.isGameEnd = true;
       if (!player.options.animations.existence && this.endState < END_STATE_MARKERS.SHOW_NEW_GAME) this.additionalEnd = END_STATE_MARKERS.SHOW_NEW_GAME//animation option
       if (this.endState >= END_STATE_MARKERS.CREDITS_START && this.endState < END_STATE_MARKERS.SHOW_NEW_GAME && PlayerProgress.existenceUnlocked())

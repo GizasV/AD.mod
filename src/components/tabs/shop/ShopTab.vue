@@ -99,7 +99,6 @@ export default {
     <div class="c-shop-disclaimer">
       No Secret Achievement :blobsad:
     </div>
-    </div>
   </div>
 </template>
 

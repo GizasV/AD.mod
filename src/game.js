@@ -709,8 +709,7 @@ function passivePrestigeGen() {
       // count here. This gives us the desirable behavior that
       // infinities and eternities gained overall will be the same
       // for two ticks as for one tick of twice the length.
-      infGen = infGen.plus(gainedInfinities().times(
-        Currency.eternities.value.minus(eternitiedGain.div(2).floor())).times(Time.deltaTime));
+      infGen = infGen.plus(gainedInfinities().times(Currency.eternities.value.minus(eternitiedGain.div(2).floor())).times(Time.deltaTime));
     }
     infGen = infGen.plus(player.partInfinitied);
     Currency.infinities.add(infGen.floor());
