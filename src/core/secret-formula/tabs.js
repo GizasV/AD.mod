@@ -402,7 +402,7 @@ export const tabs = [
     name: "Celestials",
     hideAt: 2.4,
     UIClass: "o-tab-btn--celestial",
-    condition: () => Teresa.isUnlocked,
+    condition: () => Teresa.isUnlocked || PlayerProgress.existenceUnlocked(),
     id: 9,
     hidable: true,
     subtabs: [

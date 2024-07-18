@@ -1393,9 +1393,9 @@ export const normalAchievements = [
   {
     id: 191,
     name: "... and a New Begining",
-    description: "Start a new Existence (nyi)",
-    checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    description: "Start a new Existence",
+    checkRequirement: () => true,
+    checkEvent: GAME_EVENT.EXISTENCE_RESET_AFTER
   },
   {
     id: 192,
@@ -1410,42 +1410,42 @@ export const normalAchievements = [
     name: "nyi",
     description: "nyi",
     checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER
   },
   {
     id: 194,
     name: "nyi",
     description: "nyi",
     checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER
   },
   {
     id: 195,
     name: "nyi",
     description: "nyi",
     checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER
   },
   {
     id: 196,
     name: "nyi",
     description: "nyi",
     checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER
   },
   {
     id: 197,
     name: "nyi",
     description: "nyi",
     checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER
   },
   {
     id: 198,
     name: "nyi",
     description: "nyi",
     checkRequirement: () => false,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER
   },
 
 ];

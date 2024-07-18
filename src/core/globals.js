@@ -89,4 +89,6 @@ export * from "./tabs";
 export * from "./tab-notifications";
 export * from "./speedrun";
 
+export * from "./existence";
+
 export * from "./automator/script-templates";

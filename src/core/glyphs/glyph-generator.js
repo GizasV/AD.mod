@@ -93,6 +93,19 @@ export const GlyphGenerator = {
   },
   /* eslint-enable lines-between-class-members */
 
+  customGlyph(level = 1, StrengthPerCent = 20, type = "power") {
+    const actualStrength = 1 + (StrengthPerCent/40);
+    return {
+      id: undefined,
+      idx: null,
+      type: type,
+      strength: actualStrength,
+      level: level,
+      rawLevel: level,
+      effects: makeGlyphEffectBitmask(["powerpow"]),
+    };
+  },
+
   startingGlyph(level) {
     const initialStrength = 1.5;
     return {

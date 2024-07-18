@@ -1,4 +1,3 @@
-import { teresa } from "./celestials/teresa";
 
 export const confirmationTypes = [
   {
@@ -60,7 +59,7 @@ export const confirmationTypes = [
   }, {
     name: "Glyph Selection",
     option: "glyphSelection",
-    isUnlocked: () => Autobuyer.reality.isUnlocked,
+    isUnlocked: () => Autobuyer.reality.isUnlocked || PlayerProgress.existenceUnlocked(),
   }, {
     name: "Glyph Undo",
     option: "glyphUndo",
@@ -89,5 +88,9 @@ export const confirmationTypes = [
     name: "Celestial Reality",
     option: "enterCelestials",
     isUnlocked: () => Teresa.isUnlocked,
+  }, {
+    name: "Existence",
+    option: "existence",
+    isUnlocked: () => PlayerProgress.existenceUnlocked(),
   }
 ];

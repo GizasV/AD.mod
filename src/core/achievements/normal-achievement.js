@@ -110,6 +110,13 @@ export const Achievements = {
     return Achievements.all.filter(ach => ach.isPrePelle);
   },
 
+  /**
+   * @type {AchievementState[]}
+   */
+  get realityLayer() {
+    return Achievements.all.filter(ach => ach.isPrePelle && !ach.isPreReality);
+  },
+
   get allRows() {
     const count = Achievements.all.map(a => a.row).max();
     return Achievements.rows(1, count);
@@ -123,6 +130,12 @@ export const Achievements = {
   get prePelleRows() {
     const count = Achievements.prePelle.map(a => a.row).max();
     return Achievements.rows(1, count);
+  },
+
+  get realityLayerRows() {
+    const count1 = Achievements.preReality.map(a => a.row).max();
+    const count2 = Achievements.prePelle.map(a => a.row).max();
+    return Achievements.rows(count1 + 1, count2 - count1);
   },
 
   rows: (start, count) => Array.range(start, count).map(Achievements.row),

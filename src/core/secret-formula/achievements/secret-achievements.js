@@ -194,7 +194,7 @@ export const secretAchievements = [
   },
   {
     id: 51,
-    name: "Here we go again",
+    name: "The Anti-Antihistorian",
     description: "Empty all of your Alchemy Resources."
   },
   {

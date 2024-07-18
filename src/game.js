@@ -232,6 +232,14 @@ export function resetEternityRuns() {
   GameCache.averageRealTimePerEternity.invalidate();
 }
 
+export function resetRealityRuns() {
+  player.records.recentRealities = Array.from(
+    { length: 10 },
+    () => [Number.MAX_VALUE, Number.MAX_VALUE, DC.D1, 1, "", 0, 0]
+  );
+  GameCache.averageRealTimePerEternity.invalidate();
+}
+
 // Player gains 50% of the eternities they would get if they continuously repeated their fastest eternity, if they
 // have the auto-eternity milestone and turned on eternity autobuyer with 0 EP
 export function getEternitiedMilestoneReward(ms, considerMilestoneReached) {

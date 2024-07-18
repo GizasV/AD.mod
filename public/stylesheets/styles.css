@@ -951,6 +951,26 @@ button:focus {
   }
 }
 
+@keyframes a-existence-mod {
+  0% {
+    color: white;
+    box-shadow: 0 0 0.5rem white;
+    text-shadow: 0 0 0.2rem white;
+  }
+
+  50% {
+    color: black;
+    box-shadow: 0 0 2.5rem white, 0 0 1.5rem white;
+    text-shadow: 0 0 1rem white, 0 0 1rem white, 0 0 1rem white, 0 0 0.8rem white, 0 0 0.8rem white, 0 0 0.8rem white, 0 0 0.5rem white, 0 0 0.5rem white, 0 0 0.3rem white, 0 0 0.3rem white;
+  }
+
+  100% {
+    color: white;
+    box-shadow: 0 0 0.5rem white;
+    text-shadow: 0 0 0.2rem white;
+  }
+}
+
 [ach-tooltip] {
   position: relative;
 }

@@ -405,6 +405,14 @@ Currency.realityMachines = new class extends DecimalCurrency {
       player.records.bestReality.RMSet = Glyphs.copyForRecords(Glyphs.active.filter(g => g !== null));
     }
   }
+
+  get max() { return player.reality.maxRM; }
+  set max(value) { player.reality.maxRM = value; }
+
+  reset(max = false) {
+    super.reset();
+    if (max) this.max = this.startingValue;
+  }
 }();
 
 Currency.perkPoints = new class extends NumberCurrency {
@@ -422,6 +430,14 @@ Currency.imaginaryMachines = new class extends NumberCurrency {
   set value(value) {
     player.reality.imaginaryMachines = Math.clampMax(value, MachineHandler.currentIMCap);
   }
+
+  get cap() { return MachineHandler.currentIMCap; }
+  set cap(value) { player.reality.iMCap = (value / ImaginaryUpgrade(13).effectOrDefault(1)); }
+
+  reset(cap = false) {
+    super.reset();
+    if (cap) this.cap = this.startingValue;
+  }
 }();
 
 Currency.darkMatter = new class extends DecimalCurrency {
@@ -434,6 +450,11 @@ Currency.darkMatter = new class extends DecimalCurrency {
 
   get max() { return player.celestials.laitela.maxDarkMatter; }
   set max(value) { player.celestials.laitela.maxDarkMatter = value; }
+
+  reset(max = false) {
+    super.reset();
+    if (max) this.max = this.startingValue;
+  }
 }();
 
 Currency.darkEnergy = new class extends NumberCurrency {

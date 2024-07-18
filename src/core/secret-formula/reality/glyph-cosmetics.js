@@ -1,15 +1,20 @@
 // Color prop is a combination of a B/W background and a border hex code
 export const glyphCosmeticSets = {
-  cards: {
-    id: "cards",
-    name: "Playing Card Suits",
-    symbol: ["♠", "♥", "♦", "♣", "♤", "♧", "♡", "♢"],
-    color: ["W#000000", "B#FF2222"],
+  regular: {
+    id: "regular",
+    name: "Regular Glyphs",
+    symbol: ["Ω", "∞", "Ξ", "Δ",  "Ψ", "Ϙ", "Ϟ", "⸸", "♥"],
   },
   lower: {
     id: "lower",
     name: "Lowercase Glyphs",
     symbol: ["ω", "ξ", "δ", "ψ"],
+  },
+  cards: {
+    id: "cards",
+    name: "Playing Card Suits",
+    symbol: ["♠", "♥", "♦", "♣", "♤", "♧", "♡", "♢"],
+    color: ["W#000000", "B#FF2222"],
   },
   sus: {
     id: "sus",
@@ -222,5 +227,11 @@ export const glyphCosmeticSets = {
     symbol: ["𓆏", "𓆉", "𓅬", "𓅃", "𓃲", "𓆣", "𓆊", "𓃰"],
     preventBlur: true,
     color: ["W#0000AA"],
+  },
+  cancer: {
+    id: "cancer",
+    name: "Cancer Glyphs",
+    symbol: ["⚡", "8", "⚤", "🕟", "☎", "🦒", "⛧", "☠", "³"],
+    color: ["W#000000", "B#FF2222"],
   },
 };

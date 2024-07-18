@@ -339,6 +339,7 @@ window.player = {
       iMCapSet: [],
       laitelaSet: [],
     },
+    // add existence
   },
   speedrun: {
     isUnlocked: false,
@@ -768,9 +769,11 @@ window.player = {
   tutorialState: 0,
   tutorialActive: true,
   //existence things
-  existences: 0,
+  existence: {
+    existenceUnlocked: false,
+    existences: 0,
 
-
+  },
   options: {
     news: {
       enabled: true,
@@ -873,7 +876,8 @@ window.player = {
       dimensionBoost: true,
       switchAutomatorMode: true,
       respecIAP: true,
-      enterCelestials: true
+      enterCelestials: true,
+      existence: true
     },
     awayProgress: {
       antimatter: true,
