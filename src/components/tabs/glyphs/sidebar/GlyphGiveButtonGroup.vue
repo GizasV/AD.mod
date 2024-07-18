@@ -15,7 +15,7 @@ export default {
             this.vIsFlipped = V.isFlipped;
             this.realityGlyphLevel = AlchemyResource.reality.amount;
             this.realityGlyphUnlocked = AlchemyResource.reality.isUnlocked;
-            this.availableGlyphs = ((this.vIsFlipped || this.realityGlyphUnlocked) && PlayerProgress.existenceUnlocked()) // need existence, may change to an existence milestone
+            this.availableGlyphs = (((this.vIsFlipped || this.realityGlyphUnlocked) && PlayerProgress.existenceUnlocked())&& !Pelle.isDoomed); // need existence, may change to an existence milestone
         },
         createRealityGlyph() {
             Glyphs.giveRealityGlyph()
