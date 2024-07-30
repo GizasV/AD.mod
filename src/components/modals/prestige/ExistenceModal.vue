@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     message() {
-    if (player.existence.existenceUnlocked)
+    if (PlayerProgress.existenceUnlocked())
       return `Existence will reset everything except Challenge records and anything under the General header on the Statistics tab.`;
     else
       return `Existence will reset everything except Challenge records and anything under the General header on the Statistics tab. 

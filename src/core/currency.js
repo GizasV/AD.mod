@@ -498,3 +498,13 @@ Currency.galaxyGeneratorGalaxies = new class extends NumberCurrency {
     player.celestials.pelle.galaxyGenerator.spentGalaxies += spent;
   }
 }();
+
+Currency.existences = new class extends NumberCurrency {
+  get value() { return player.existence.existences; }
+  set value(value) { player.existence.existences = value; }
+}();
+
+Currency.existencePoints = new class extends DecimalCurrency {
+  get value() { return player.existence.existencePoints; }
+  set value(value) { player.existence.existencePoints = value; }
+}();

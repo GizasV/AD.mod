@@ -479,7 +479,46 @@ export const tabs = [
       }
     ]
   },
-
+  {
+    key: "existence",
+    name: "Existence",
+    UIClass: "o-tab-btn--existence",
+    hideAt: 1.5,
+    condition: () => true,
+    id: 10,
+    hidable: true,
+    subtabs: [
+      {
+        key: "milestones",
+        name: "Existence Temp",
+        symbol: "A",
+        component: "ShopTab",
+        id: 0,
+        hidable: true
+      },
+      {
+        key: "upgrades",
+        name: "Existence Temp",
+        symbol: "B",
+        component: "ShopTab",
+        id: 1,
+        hidable: true
+      },
+      {
+        key: "temp",
+        name: "Existence Temp",
+        symbol: "C",
+        component: "ShopTab",
+        id: 2,
+        hidable: true
+      }
+    ]
+  }
+  
+  
+  
+  /*
+  ,
   {
     key: "shop",
     name: "Shop",
@@ -499,6 +538,6 @@ export const tabs = [
       }
     ]
   }
-
+  */
 
 ];

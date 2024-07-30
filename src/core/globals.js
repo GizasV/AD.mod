@@ -90,5 +90,7 @@ export * from "./tab-notifications";
 export * from "./speedrun";
 
 export * from "./existence";
+export * from "./existence-milestones";
+export * from "./existence-upgrades";
 
 export * from "./automator/script-templates";

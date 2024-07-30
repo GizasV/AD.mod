@@ -136,6 +136,10 @@ export default {
   background-color: var(--color-celestials);
 }
 
+.o-tab-btn--existence::before {
+  background-color: var(--color-existence);
+}
+
 .o-subtab-btn--active {
   border-bottom-width: 0.5rem;
 }

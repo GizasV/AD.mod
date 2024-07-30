@@ -53,10 +53,6 @@ export default {
   pointer-events: auto;
 }
 
-.t-s12 .c-new-existence-container {
-  color: white;
-}
-
 .c-new-existence-button-container {
   display: flex;
   flex-direction: column;
@@ -67,11 +63,10 @@ export default {
   animation: a-existence-mod 4s infinite;
   font-size: 2.1rem;
   font-family: Typewriter;
-  border: black;
-  background: black;
   border-radius: var(--var-border-radius, 1rem);
   margin-top: 1rem;
   padding: 1rem;
   cursor: pointer;
 }
+
 </style>

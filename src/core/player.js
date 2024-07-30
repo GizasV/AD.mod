@@ -770,8 +770,11 @@ window.player = {
   tutorialActive: true,
   //existence things
   existence: {
-    existenceUnlocked: false,
     existences: 0,
+    totalExistences: 0,
+    existencePoints: 0,
+    existenceMilestones:new Set(),
+    existenceUpgrades: new Set(),
 
   },
   options: {

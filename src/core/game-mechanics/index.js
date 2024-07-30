@@ -6,3 +6,4 @@ export * from "./puchasable";
 export * from "./set-purchasable";
 export * from "./bit-purchasable";
 export * from "./rebuyable";
+export * from "./purchasable-milestones";

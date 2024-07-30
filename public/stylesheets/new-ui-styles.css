@@ -30,6 +30,7 @@
   --color-notification: yellow;
 
   --color-antimatter: #df5050;
+  --color-existence: white;
 
   --color-prestige--accent: black;
 
@@ -178,6 +179,10 @@ body.t-s12 {
 
 .o-tab-btn--celestial::after {
   border-left-color: var(--color-celestials);
+}
+
+.o-tab-btn--existence::after {
+  border-left-color: var(--color-existence);
 }
 
 .tab-button.shop {
@@ -332,6 +337,16 @@ body.t-s12 {
 
 .o-tab-btn--celestial .o-subtab__tooltip::after {
   border-top-color: var(--color-celestials);
+}
+
+.o-tab-btn--existence .o-subtab__tooltip {
+  color: var(--color-existence);
+  background: var(--color-prestige--accent);
+  border-color: var(--color-existence);
+}
+
+.o-tab-btn--existence .o-subtab__tooltip::after {
+  border-top-color: var(--color-existence);
 }
 
 .active {

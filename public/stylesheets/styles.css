@@ -82,6 +82,7 @@ html {
   --color-reality-light: #d5ffd7;
   --color-reality-dark: #0a790c;
   --color-celestials: #5151ec;
+  --color-existence: black;
   --color-prestige--accent: white;
 
   --color-teresa--base: #5151ec;
@@ -136,6 +137,7 @@ html {
 
   --color-infinity: #ff9800;
   --color-reality-dark: #0ba00e;
+  --color-existence: white;
   --color-prestige--accent: black;
 
   --color-teresa--accent: black;
@@ -161,6 +163,7 @@ html {
   --color-reality: #4caf50;
   --color-reality-dark: #0ba00e;
   --color-celestials: #00bcd4;
+  --color-existence: white;
   --color-prestige--accent: black;
 
   --color-teresa--accent: black;
@@ -179,6 +182,7 @@ html {
   --color-overlay: rgba(60, 60, 100, 50%);
 
   --color-reality-dark: #0ba00e;
+  --color-existence: white;
   --color-prestige--accent: black;
 
   --color-teresa--accent: black;
@@ -201,6 +205,7 @@ html {
   --color-reality: #4caf50;
   --color-reality-dark: #0ba00e;
   --color-celestials: #00bcd4;
+  --color-existence: white;
   --color-prestige--accent: black;
 
   --color-teresa--accent: black;
@@ -225,6 +230,7 @@ html {
   --color-reality-light: #e8e3e4;
   --color-reality-dark: #7a7273;
   --color-celestials: #f2d6c1;
+  --color-existence: #a5a885;
   --color-prestige--accent: #dbd242;
 
   --color-pelle--base: #7cb727;
@@ -250,6 +256,7 @@ html {
   --color-notification: yellow;
   --color-overlay: rgba(60, 60, 100, 50%);
 
+  --color-existence: white;
   --color-prestige--accent: black;
 
   --color-teresa--accent: black;
@@ -266,6 +273,7 @@ html {
   --color-notification: yellow;
   --color-overlay: rgba(60, 60, 100, 50%);
 
+  --color-existence: white;
   --color-prestige--accent: black;
 
   --color-teresa--accent: black;
@@ -754,6 +762,15 @@ button:focus {
   background: var(--color-celestials);
 }
 
+.o-tab-btn--existence {
+  color: var(--color-existence);
+  background-color: var(--color-prestige--accent);
+  border-color: var(--color-existence);
+}
+
+.o-tab-btn--existence:hover {
+  background: var(--color-existence);
+}
 /* #endregion tab buttons */
 
 #loading {
@@ -953,21 +970,28 @@ button:focus {
 
 @keyframes a-existence-mod {
   0% {
-    color: white;
-    box-shadow: 0 0 0.5rem white;
-    text-shadow: 0 0 0.2rem white;
+    color: var(--color-existence);
+    box-shadow: 0 0 0.5rem var(--color-existence);
+    text-shadow: 0 0 0.2rem var(--color-existence);
+    border: var(--color-prestige--accent);
+    background: var(--color-prestige--accent);
   }
 
   50% {
-    color: black;
-    box-shadow: 0 0 2.5rem white, 0 0 1.5rem white;
-    text-shadow: 0 0 1rem white, 0 0 1rem white, 0 0 1rem white, 0 0 0.8rem white, 0 0 0.8rem white, 0 0 0.8rem white, 0 0 0.5rem white, 0 0 0.5rem white, 0 0 0.3rem white, 0 0 0.3rem white;
+    color: var(--color-prestige--accent);
+    box-shadow: 0 0 2.5rem var(--color-existence), 0 0 1.5rem var(--color-existence);
+    text-shadow: 0 0 1rem var(--color-existence), 0 0 1rem var(--color-existence), 0 0 1rem var(--color-existence), 0 0 0.8rem var(--color-existence), 0 0 0.8rem var(--color-existence),
+     0 0 0.8rem var(--color-existence), 0 0 0.5rem var(--color-existence), 0 0 0.5rem var(--color-existence), 0 0 0.3rem var(--color-existence), 0 0 0.3rem var(--color-existence);
+    border: var(--color-prestige--accent);
+    background: var(--color-prestige--accent);
   }
 
   100% {
-    color: white;
-    box-shadow: 0 0 0.5rem white;
-    text-shadow: 0 0 0.2rem white;
+    color: var(--color-existence);
+    box-shadow: 0 0 0.5rem var(--color-existence);
+    text-shadow: 0 0 0.2rem var(--color-existence);
+    border: var(--color-prestige--accent);
+    background: var(--color-prestige--accent);
   }
 }
 

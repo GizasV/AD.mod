@@ -8,13 +8,13 @@ export function existenceResetRequest() {
   }
 }
 
-export function existenceReset(reward = true) {
+export function existenceReset(isReset = false , reward = true) {
 
   player.isGameEnd = false;
 
   EventHub.dispatch(GAME_EVENT.REALITY_RESET_BEFORE);
 
-  if (reward) existenceGiveRewards();
+  if (reward) existenceGiveRewards(isReset);
 
   //resetCelQuotes();// not sure what i will do with quotes
   resetCel1();
@@ -107,7 +107,7 @@ function resetLowerLayers() {
   resetTickspeed();
 
 
-  //chalenges
+  //Challenge
   initializeChallengeCompletions();// C/IC
   resetChallengeStuff();
   player.eternityChalls = {};
@@ -331,7 +331,7 @@ function lockAchievementsOnExistence() {
   for (const achievement of Achievements.realityLayer) {
     achievement.lock();
   }
-  
+
   if (!Perk.achievementGroup5.isBought) {
     for (const achievement of Achievements.preReality) {
       achievement.lock();
@@ -350,8 +350,13 @@ function existenceStartRewards() {
 
 }
 
-function existenceGiveRewards() {
-  GlyphAppearanceHandler.unlockSet();
+function existenceGiveRewards(isReset) {
+  if (!isReset) {
+    GlyphAppearanceHandler.unlockSet();
+    player.existence.totalExistences += 1
+    Currency.existences.add(1);
+    Currency.existencePoints.add(1);
+  }
 }
 
 function existenceRecords() {
@@ -421,5 +426,3 @@ function existenceRecords() {
   resetEternityRuns();
   resetRealityRuns();
 }
-
-EventHub.logic.on(GAME_EVENT.EXISTENCE_RESET_AFTER, () => player.existence.existenceUnlocked = true);

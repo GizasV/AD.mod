@@ -21,7 +21,7 @@ export class PlayerProgress {
   }
 
   get isExistenceUnlocked() {
-    return this._player.existence.existenceUnlocked;
+    return this._player.existence.totalExistences > 0;
   }
 
   get hasFullCompletion() {
