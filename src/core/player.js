@@ -772,7 +772,7 @@ window.player = {
   existence: {
     existences: 0,
     totalExistences: 0,
-    existencePoints: 0,
+    existencePoints: DC.D0,
     existenceMilestones:new Set(),
     existenceUpgrades: new Set(),
 
