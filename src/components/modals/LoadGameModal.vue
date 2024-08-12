@@ -16,16 +16,24 @@ export default {
     <template #header>
       Save Selection
     </template>
+    <div class="c-modal--tiny">
     <LoadGameEntry
-      v-for="id in 3"
+      v-for="id in 10"
       :key="id"
       :save-id="id - 1"
       class="c-entry-border"
     />
+    </div>
   </ModalWrapperOptions>
 </template>
 
 <style scoped>
+
+.c-modal--tiny {
+  overflow-y: scroll;
+  max-height: 29rem;
+}
+
 .c-entry-border {
   border-bottom: 0.1rem solid var(--color-text);
   width: 28rem;
